@@ -1,4 +1,7 @@
-import java.util.*;
+package chat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Students 
 {

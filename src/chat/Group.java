@@ -1,3 +1,5 @@
+package chat;
+
 public class Group{
 	
 	Students partner;
