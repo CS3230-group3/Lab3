@@ -11,7 +11,6 @@ public class Main{
 		List<String> s5List = new ArrayList<String>(Arrays.asList("Aloha","It's a warm day","I like fruit","I'm good at typing","bye"));
 		List<String> s6List = new ArrayList<String>(Arrays.asList("Greetings","It's good weather today","I like chocolate","I'm good at fixing computer bugs","Ciao"));
 		
-		//Set<Students> student = new HashSet<Students>();
 		Set<Group> group = new HashSet<Group>();
 		
 		Students s1 = new Students("Chris","Strickland",4.0,null,s1List);
@@ -33,7 +32,6 @@ public class Main{
 		group.add(new Group(s3,s5));
 		group.add(new Group(s4,s9));
 		group.add(new Group(s11,s6));
-		group.add(new Group(s1,s2));
 		
 		System.out.println(group);
 		
