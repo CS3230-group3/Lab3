@@ -17,7 +17,7 @@ public class ChatFrame extends JFrame {
 	private JScrollPane outputScrollPane;
 	private JScrollPane inputScrollPane;
 	private JTextArea chatOutput;
-	private JTextField chatInput;
+	private JTextArea chatInput;
 	private JButton sendButton;
 	
 	private void moveCursorToEnd(JTextComponent textComponent) {
@@ -44,18 +44,20 @@ public class ChatFrame extends JFrame {
 		//scrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
 		outputScrollPane.setPreferredSize(new Dimension(300, 300));
 		
-		chatInput = new JTextField();
+		chatInput = new JTextArea();
 		chatInput.addKeyListener(new KeyAdapter() {
-			/*@Override
+			
+			@Override
 			public void keyPressed(KeyEvent event) {
-				int keyCode = event.getKeyCode();
-				// TODO: Figure out how to detect Ctrl+Enter
-				switch (keyCode) {
-				case KeyEvent.VK_ENTER: (chatInput).append();
-				//						break;
-				//case KeyEvent.
+				if(event.getKeyCode() == KeyEvent.VK_ENTER && event.getModifiers() == KeyEvent.CTRL_MASK)
+				{
+					submitInput();
 				}
-			}*/
+				if(event.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					chatInput.append("");
+				}
+			}
 		});
 		
 		inputScrollPane = new JScrollPane(chatInput);
