@@ -3,17 +3,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-//import javax.swing.ScrollPaneConstants;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.text.JTextComponent;
 
 public class ChatFrame extends JFrame {
+	private static final long serialVersionUID = -787546267482940465L;
 	private JScrollPane outputScrollPane;
 	private JScrollPane inputScrollPane;
 	private JTextArea chatOutput;
@@ -33,20 +32,19 @@ public class ChatFrame extends JFrame {
 			
 	public ChatFrame() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(new Dimension(350, 600));
+		setSize(new Dimension(350, 450));
 		
 		final JPanel panel = new JPanel();
-		panel.setPreferredSize(new Dimension(325, 550));
+		panel.setPreferredSize(new Dimension(325, 400));
 		
 		chatOutput = new JTextArea();
 		
 		outputScrollPane = new JScrollPane(chatOutput);
-		//scrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
+		outputScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		outputScrollPane.setPreferredSize(new Dimension(300, 300));
 		
 		chatInput = new JTextArea();
 		chatInput.addKeyListener(new KeyAdapter() {
-			
 			@Override
 			public void keyPressed(KeyEvent event) {
 				if(event.getKeyCode() == KeyEvent.VK_ENTER && event.getModifiers() == KeyEvent.CTRL_MASK)
@@ -70,13 +68,14 @@ public class ChatFrame extends JFrame {
 				submitInput();
 			}
 		});
+		
 		panel.add(outputScrollPane);
 		panel.add(inputScrollPane);
 		panel.add(sendButton);
-		
 		add(panel);
 		
 		setVisible(true);
+		
 		chatInput.requestFocus();
 	}
 	

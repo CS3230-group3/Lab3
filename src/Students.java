@@ -8,7 +8,7 @@ public class Students
 	Students partner;
 	List<String> response = new ArrayList<String>();
 	
-	public Students(String firstName, String lastName, double score, Students partner, List response )
+	public Students(String firstName, String lastName, double score, Students partner, List<String> response )
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
