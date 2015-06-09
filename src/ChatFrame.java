@@ -61,7 +61,7 @@ public class ChatFrame extends JFrame {
 		});
 		
 		inputScrollPane = new JScrollPane(chatInput);
-		inputScrollPane.setPreferredSize(new Dimension(300, 60));
+		inputScrollPane.setPreferredSize(new Dimension(300, 50));
 		
 		sendButton = new JButton("Send");
 		sendButton.addActionListener(new ActionListener() {
