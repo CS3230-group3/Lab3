@@ -40,6 +40,7 @@ public class ChatFrame extends JFrame {
 		panel.setPreferredSize(new Dimension(325, 400));
 		
 		chatOutput = new JTextArea();
+		chatOutput.setEditable(false);
 		
 		outputScrollPane = new JScrollPane(chatOutput);
 		outputScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
