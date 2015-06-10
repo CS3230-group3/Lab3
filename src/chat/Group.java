@@ -44,28 +44,48 @@ public class Group{
 		
 		Group other = (Group) obj;
 		
-		if (additionalPartner == null) 
-		{
-			if (other.additionalPartner != null)
-			{
-				return false;
+		boolean equalSoFar = false;	
+		if (partner != null){
+			if (partner.equals(other.partner)) {
+				equalSoFar = true;
 			}
-		} 
-		else if (!additionalPartner.equals(other.additionalPartner))
-		{
-			return false;
 		}
-		if (partner == null) 
-		{
-			if (other.partner != null)
-			{
-				return false;
+		else if (other.partner == null) {
+			equalSoFar = true;
+		}
+		
+		if (equalSoFar) {
+			if (additionalPartner != null) {
+				if (additionalPartner.equals(other.additionalPartner)) {
+					return true;
+				}
 			}
-		} 
-		else if (!partner.equals(other.partner))
-		{
-			return false;
+			else if (other.additionalPartner == null) {
+				return true;
+			}
 		}
-		return true;
+		
+		equalSoFar = false;
+		if (partner != null) {
+			if (partner.equals(other.additionalPartner)) {
+				equalSoFar = true;
+			}
+		}
+		else if (other.additionalPartner == null) {
+			equalSoFar = true;
+		}
+		
+		if (equalSoFar) {
+			if (additionalPartner != null) {
+				if (additionalPartner.equals(other.partner)) {
+					return true;
+				}
+			}
+			else if (other.partner == null) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
